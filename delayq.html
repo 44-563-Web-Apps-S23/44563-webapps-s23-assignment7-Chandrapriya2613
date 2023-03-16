@@ -54,30 +54,22 @@
 </div>
 <script>
 	function makeNewDiv(){
-		/* make the div and its text */
-        var textval=document.getElementById('inputval').value;
+	 var textval=document.getElementById('inputval').value;
 		let element = document.createElement("div");
 		element.innerHTML = textval;
 		element.style.color = "Blue";
         element.className="delayQ";
-		/* add it to the container */
 		let container = document.getElementById('target');
 		container.appendChild(element);
-		
 	}
     function get(){
-		/* make the div and its text */
-        var queueItems=document.getElementsByClassName("delayQ");
-        
-		if(queueItems.length>0){
+		var queueItems=document.getElementsByClassName("delayQ");
+        if(queueItems.length>0){
             queueItems[0].remove();
         }
-      
-		
-	}
+    }
     function delay(){
-		/* make the div and its text */
-        var queueItems=document.getElementsByClassName("delayQ");
+		var queueItems=document.getElementsByClassName("delayQ");
         var removedId;
 		if(queueItems.length!=0 ||queueItems.length!=1){
             removedId=queueItems[0];
@@ -85,7 +77,6 @@
             let container = document.getElementById('target');
 		container.appendChild(removedId);
         }
-		
 	}
 </script>
 </html>	
