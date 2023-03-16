@@ -107,7 +107,64 @@
     </div>
   </div>
 </div>
-
+<script>
+  var ids=[101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124];
+  var checkCount=0;
+  var penalty=0;
+  var lastCheck=0;
+  var mouseLocation=13;
+  var catLocation=21;
+  var gameOver=false;
+  function check(x){
+    
+    var imageid=ids[x];
+    if(!gameOver){
+      
+    var imgval=document.getElementById(imageid);
+     if (x==21){
+      document.getElementById(imageid).src="Lion.jpg";
+      gameOver=true;
+      penalty=penalty+4;
+    }
+    else if (x==13){
+      document.getElementById(imageid).src="mouse.jpg";
+      gameOver=true;
+      penalty=penalty-3;
+  
+    }else{
+      document.getElementById(imageid).src="grass.jpg";
+    }
+    checkCount=checkCount+1;
+    penalty=penalty+1;
+    document.getElementById("bushes").innerHTML='Number of bushes checked is '+checkCount;
+  
+  lastCheck=x;
+  document.getElementById("penalty").innerHTML='Penalty is '+penalty;
+  }
+  
+  }
+  function help() {
+          var mouseRowval = parseInt(mouseLocation / 6) ;
+          var mouseColval = mouseLocation % 6; 
+          var columnval = lastCheck % 6 ;
+          var catRowval = parseInt(catLocation / 6) ;
+          var catColval = catLocation % 6;
+          var rowval = parseInt(lastCheck / 6) ;
+  
+          
+          
+          if ((Math.abs(catRowval - rowval) <= 1) && (Math.abs(catColval - columnval) <= 1)) { 
+              document.getElementById("help").innerHTML = "Help report: meow";
+          }else if ((Math.abs(mouseRowval - rowval) <= 1) && (Math.abs(mouseColval - columnval) <= 1)) {
+              document.getElementById("help").innerHTML = "Help report: squeak";
+          }else {
+              document.getElementById("help").innerHTML = "Help report: sorry, no help available";
+          }
+          penalty += 2;
+          document.getElementById("penalty").innerHTML = "Penalty is " + penalty;
+      }
+  
+  </script>
 
 
 </body>
