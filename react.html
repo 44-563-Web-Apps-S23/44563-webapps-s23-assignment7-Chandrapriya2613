@@ -28,17 +28,17 @@
   function startTime() { 
     for (let i = 0; i < 9; i++) {
         setTimeout ( function () { 
-            document.getElementById("counter").innerHTML = "Count " + i   
+            document.getElementById("counter").innerHTML = "Count   " + i   
         }, (8 - i) * 1000) 
     }
     setTimeout ( function () {
         if (reactTimeval == undefined) {
-            document.getElementById("target").innerHTML = "Too slow"
+            document.getElementById("target").innerHTML = "Too slow "
         }
         else {
             let endTime = Date.now()
             let difference = endTime - reactTimeval
-            document.getElementById("target").innerHTML = "Time was " + difference
+            document.getElementById("target").innerHTML = "Time was  " + difference
         }
     }, 8000)
   }
