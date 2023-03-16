@@ -121,19 +121,22 @@
     var imgval=document.getElementById(imageid);
      if (x==21){
       document.getElementById(imageid).src="tiger.jpg";
-      gameOver=true;
       penalty=penalty+4;
+      gameOver=true;
+      
     }
     else if (x==13){
       document.getElementById(imageid).src="mouse.jpg";
-      gameOver=true;
       penalty=penalty-3;
+      gameOver=true;
+      
   
     }else{
       document.getElementById(imageid).src="grass.jpg";
     }
-    checkCount=checkCount+1;
     penalty=penalty+1;
+    checkCount=checkCount+1;
+    
     document.getElementById("bushes").innerHTML='Number of bushes checked is '+checkCount;
   
   lastCheck=x;
